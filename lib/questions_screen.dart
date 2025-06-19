@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/option_button.dart';
 
 class QuestionsScreen extends StatefulWidget {
-  const QuestionsScreen({super.key});
+  const QuestionsScreen({super.key, required this.onOptionSelect});
+
+  final void Function(String option) onOptionSelect;
 
   @override
   State<QuestionsScreen> createState() {
@@ -13,41 +16,47 @@ class QuestionsScreen extends StatefulWidget {
 }
 
 class _QuestionsScreenState extends State<QuestionsScreen> {
-  void changeQuestion() {
-    // .. change quesiton logic
+  int activeQuestionIndex = 0;
+
+  void handleOption(String option) {
+    widget.onOptionSelect(option);
+    setState(() {
+      activeQuestionIndex++;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    final activeQuestion = questions[0];
+    final activeQuestion = questions[activeQuestionIndex];
 
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            activeQuestion.question,
-            style: const TextStyle(color: Colors.white),
-          ),
-          const SizedBox(height: 30),
-          OptionButton(
-            option: activeQuestion.answers[0],
-            onTap: changeQuestion,
-          ),
-          OptionButton(
-            option: activeQuestion.answers[1],
-            onTap: changeQuestion,
-          ),
-          OptionButton(
-            option: activeQuestion.answers[2],
-            onTap: changeQuestion,
-          ),
-          OptionButton(
-            option: activeQuestion.answers[3],
-            onTap: changeQuestion,
-          ),
-        ],
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              activeQuestion.question,
+              style: GoogleFonts.lato(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 30),
+            ...activeQuestion.getShuffledList().map((option) {
+              return OptionButton(
+                option: option,
+                onTap: () {
+                  handleOption(option);
+                },
+              );
+            }),
+          ],
+        ),
       ),
     );
   }

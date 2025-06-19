@@ -1,6 +1,12 @@
 class QuizQuestion {
-  const QuizQuestion({required this.question, required this.answers});
+  const QuizQuestion({required this.question, required this.options});
 
   final String question;
-  final List<String> answers;
+  final List<String> options;
+
+  List<String> getShuffledList() {
+    final shuffledOptions = List.of(options);
+    shuffledOptions.shuffle();
+    return shuffledOptions;
+  }
 }

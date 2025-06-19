@@ -15,7 +15,7 @@ class OptionButton extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
       ),
       onPressed: onTap,
-      child: Text(option),
+      child: Text(option, textAlign: TextAlign.center),
     );
   }
 }
