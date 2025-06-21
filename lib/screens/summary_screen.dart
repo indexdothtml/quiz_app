@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/components/questions_summary.dart';
 import 'package:quiz_app/data/questions.dart';
 
 class SummaryScreen extends StatelessWidget {
@@ -54,15 +54,16 @@ class SummaryScreen extends StatelessWidget {
             const SizedBox(height: 20),
             TextButton.icon(
               onPressed: onRestartQuiz,
-              label: Text(
-                'Restart Quiz',
-                style: GoogleFonts.lato(
-                  color: Colors.white,
-                  fontSize: 15,
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                iconSize: 25,
+                textStyle: GoogleFonts.lato(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              icon: const Icon(Icons.refresh, color: Colors.white, size: 20),
+              label: const Text('Restart Quiz'),
+              icon: const Icon(Icons.refresh),
             ),
           ],
         ),
