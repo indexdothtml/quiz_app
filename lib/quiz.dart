@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:quiz_app/start_screen.dart';
 import 'package:quiz_app/questions_screen.dart';
+import 'package:quiz_app/summary_screen.dart';
 import 'package:quiz_app/data/questions.dart';
 
 class Quiz extends StatefulWidget {
@@ -24,6 +25,7 @@ class _QuizState extends State<Quiz> {
   }
 
   void switchScreen() {
+    selectedOptions.clear();
     setState(() {
       activeScreen = QuestionsScreen(onOptionSelect: saveOption);
     });
@@ -33,9 +35,8 @@ class _QuizState extends State<Quiz> {
     selectedOptions.add(option);
 
     if (selectedOptions.length == questions.length) {
-      selectedOptions.clear();
       setState(() {
-        activeScreen = StartScreen(switchScreen);
+        activeScreen = SummaryScreen(selectedOptions, switchScreen);
       });
     }
   }
