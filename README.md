@@ -61,10 +61,10 @@ flutter run
 
 2. Answer questions, by selecting one correct option.
 
-<img src="screenshots/question_screen_1.png" alt="Question Scrren 1" width="200">
-<img src="screenshots/question_screen_2.png" alt="Question Scrren 2" width="200">
-<img src="screenshots/question_screen_3.png" alt="Question Scrren 3" width="200">
+   <img src="screenshots/question_screen_1.png" alt="Question Scrren 1" width="200">
+   <img src="screenshots/question_screen_2.png" alt="Question Scrren 2" width="200">
+   <img src="screenshots/question_screen_3.png" alt="Question Scrren 3" width="200">
 
 3. See final result, also you can take retest by clicking on Restart Quiz button.
 
-<img src="screenshots/result_screen.png" alt="Result Screen" width="200">
+   <img src="screenshots/result_screen.png" alt="Result Screen" width="200">
