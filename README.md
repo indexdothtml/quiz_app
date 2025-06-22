@@ -56,12 +56,15 @@ flutter run
 ## Usage
 
 1. Start your quiz by clicking on Start Quiz button.
-   ![Alt Text - Start screen of app](/screenshots/start_screen.png)
+
+   <img src="screenshots/start_screen.png" alt="Start Screen" width="200">
 
 2. Answer questions, by selecting one correct option.
-   ![Alt Text - Question screen 1](/screenshots/question_screen_1.png)
-   ![Alt Text - Question screen 2](/screenshots/question_screen_2.png)
-   ![Alt Text - Question screen 3](/screenshots/question_screen_3.png)
+
+<img src="screenshots/question_screen_1.png" alt="Question Scrren 1" width="200">
+<img src="screenshots/question_screen_2.png" alt="Question Scrren 2" width="200">
+<img src="screenshots/question_screen_3.png" alt="Question Scrren 3" width="200">
 
 3. See final result, also you can take retest by clicking on Restart Quiz button.
-   ![Alt Text - Result Screen](/screenshots/result_screen.png)
+
+<img src="screenshots/result_screen.png" alt="Result Screen" width="200">
